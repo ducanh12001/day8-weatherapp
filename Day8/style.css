@@ -5,23 +5,32 @@
 
 #inputForm {
     padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 #inputForm input[type="text"] {
     padding: 10px;
     border-radius: 10px;
     margin-right: 10px;
+    width: 20%;
 }
 
 #inputForm input[type="button"] {
-    padding: 5px;
+    padding: 7px;
     cursor: pointer;
+}
+
+#error-mess {
+    color: red;
+    margin-left: 20px;
+    font-size: 18px;
 }
 
 .box {
     width: 50%;
     border: 1px solid black;
-    margin: 10px
+    margin: 10px;
 }
 
 .box1 {

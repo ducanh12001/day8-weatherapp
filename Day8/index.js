@@ -11,10 +11,21 @@ function getWeather() {
     }
 }
 
+var inputForm = document.getElementById("inputForm");
+if (inputForm) {
+    inputForm.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+             event.preventDefault();
+            document.getElementById("btn").click();
+        }
+    });
+}
+
 function getWeather2() {
     var cityInput = document.getElementById("country").value;
+    var errMess = document.getElementById("error-mess");
     if (!cityInput.trim()) {
-        alert("Please enter");
+        errMess.innerHTML = "Please enter city name";
     } else {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${key}&lang=en`)  
         .then((response) => { 
@@ -22,8 +33,10 @@ function getWeather2() {
         }) 
         .then((data) => {
             if (data.name === undefined) {
-                alert("Không tồn tại");
+                //alert("Not found");
+                errMess.innerHTML = "Not found";
             } else {
+                errMess.innerHTML = ""
                 var date = new Date(data.dt * 1000);
                 var currentDate = moment(date).format('HH:mm a DD/MM/YYYY');
                 
@@ -46,10 +59,9 @@ function getWeather2() {
                     document.getElementById("image").style.backgroundImage = "url('image/sun.jpg')";
                 }
             }
-            cityInput = "";
         })
         .catch((e) => {
-            //alert("Error" + e)
+            alert("Error " + e)
         });
     }
 }
