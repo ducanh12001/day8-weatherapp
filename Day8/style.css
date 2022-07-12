@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#inputForm {
+    padding: 10px;
+}
+
+#inputForm input[type="text"] {
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#inputForm input[type="button"] {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.box {
+    width: 50%;
+    border: 1px solid black;
+    margin: 10px
+}
+
+.box1 {
+    background-color: rgb(142, 194, 211);
+    color: white;
+    font-weight: bold;
+}
+
+#cityName {
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#temp {
+    font-size: 30px;
+}
+
+#description {
+    font-size: 24px;
+}
+
+.box2 {
+    background-color: wheat;
+}
+
+.box2 div {
+    border-bottom: 1px solid gray;
+    margin: 15px;
+}
+
+.box2 div:last-child {
+    border-bottom: none;
+}
